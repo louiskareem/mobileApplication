@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:resource="clr-namespace:MobEye.Resources"
+             x:Class="MobEye.Views.HomePage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label x:Name="Lbl_Welcome_Message" 
+               FontSize="45"
+               Text="{x:Static resource:AppResources.WelcomeMessage}" 
+               HorizontalTextAlignment="Center"
+               Padding="0,60,0,10"/>
+            
+            <Label x:Name="Lbl_Device_Info" 
+               FontSize="25"
+               Text="{x:Static resource:AppResources.DeviceInfoMessage}" 
+               HorizontalTextAlignment="Center"
+               Padding="0,5,0,10"/>
+            
+            <Label x:Name="Lbl_Alarm_Info" 
+               FontSize="16"
+               Text="{x:Static resource:AppResources.AlarmInfoMessage}" 
+               HorizontalTextAlignment="Center"
+               Padding="0,5,0,50"/>
+
+            <Button x:Name="Btn_OpenAlarm" 
+                Style="{StaticResource buttonStyle}"  
+                Text="{x:Static resource:AppResources.AlarmsButton}"
+                Clicked="OpenAlarmPage">
+                <Button.Background>
+                    <LinearGradientBrush StartPoint="0,0"
+                             EndPoint="1,0">
+                        <GradientStop Color="#99CC00"
+                          Offset="0.1"/>
+                        <GradientStop Color="#72ab72"
+                          Offset="1.0"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+
+            <Button x:Name="Btn_Portal" 
+                Style="{StaticResource buttonStyle}"  
+                Text="{x:Static resource:AppResources.PortalButton}"
+                Clicked="OpenPortal">
+                <Button.Background>
+                    <LinearGradientBrush StartPoint="0,0"
+                             EndPoint="1,0">
+                        <GradientStop Color="#99CC00"
+                          Offset="0.1"/>
+                        <GradientStop Color="#72ab72"
+                          Offset="1.0"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>   
+            
+            <Button x:Name="Btn_Remote_Control" 
+                Style="{StaticResource buttonStyle}"  
+                Text="{x:Static resource:AppResources.RemoteControlButton}"
+                Clicked="RemoteControlPage">
+                <Button.Background>
+                    <LinearGradientBrush StartPoint="0,0"
+                             EndPoint="1,0">
+                        <GradientStop Color="#99CC00"
+                          Offset="0.1"/>
+                        <GradientStop Color="#72ab72"
+                          Offset="1.0"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

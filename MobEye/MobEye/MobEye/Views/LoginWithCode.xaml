@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:MobEye.Controls;assembly=MobEye"
+             xmlns:resource="clr-namespace:MobEye.Resources"
+             x:Class="MobEye.Views.LoginWithCode"
+             Title="{x:Static resource:AppResources.LoginCodeButton}">
+    <StackLayout Padding="60"
+                 BackgroundColor="#f7f7f7">
+
+        <Image Source="mobeyelogo.png"
+               HeightRequest="170"
+               WidthRequest="170"/>
+        
+        <local:CustomEntry x:Name="Entry_Code" 
+                     Placeholder="{x:Static resource:AppResources.CodePageTitle}"
+                     Margin="0,0,0,20"
+                     Keyboard="Numeric"
+                     IsPassword="False"/>
+
+        <Button x:Name="Btn_LoginCode" Clicked="SignIn"
+                Style="{StaticResource buttonStyle}" 
+                Text="{x:Static resource:AppResources.LoginButton}">
+            <Button.Background>
+                <LinearGradientBrush StartPoint="0,0"
+                             EndPoint="1,0">
+                    <GradientStop Color="#99CC00"
+                          Offset="0.1"/>
+                    <GradientStop Color="#72ab72"
+                          Offset="1.0"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        
+        <Picker x:Name="Language_Select"
+                Title="Language" SelectedIndexChanged="ChangeLanguage">
+            <Picker.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>English</x:String>
+                    <x:String>Français</x:String>
+                    <x:String>Nederlands</x:String>
+                    <x:String>Deutsch</x:String>
+                </x:Array>
+            </Picker.ItemsSource>
+        </Picker>
+    </StackLayout>
+</ContentPage>

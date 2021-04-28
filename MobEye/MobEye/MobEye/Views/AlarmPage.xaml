@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:MobEye.Controls;assembly=MobEye"
+             xmlns:resource="clr-namespace:MobEye.Resources"
+             x:Class="MobEye.AlarmPage"
+             Title="{x:Static resource:AppResources.AlarmTitle}">
+
+    <Frame BorderColor="#d7e0b6"
+       Padding="10"
+       Margin="30">
+        <StackLayout>
+            <!--TO DISPLAY ALARM-->
+            <ListView HasUnevenRows="True" x:Name="Message_List" ItemsSource="{Binding Messages}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Frame BorderColor="#d7e0b6"
+                            Padding="10"
+                            Margin="10">
+                                
+                                <StackLayout>
+                                    
+                                    <Label Text="{Binding AlarmText}" 
+                                    FontSize="30"
+                                    Margin="0,40,0,15"/>
+
+                                    <BoxView Color="#d7e0b6"
+                                    HeightRequest="3"
+                                    HorizontalOptions="Fill"/>
+
+                                    <Label>
+                                        <Label.FormattedText>
+                                            <FormattedString>
+                                                <Span Text="Value: " />
+                                                <Span Text="{Binding Value}"/>
+                                            </FormattedString>
+                                        </Label.FormattedText>
+                                    </Label>
+
+                                    <BoxView Color="#d7e0b6"
+                                    HeightRequest="3"
+                                    HorizontalOptions="Fill"/>
+
+                                    <Label>
+                                        <Label.FormattedText>
+                                            <FormattedString>
+                                                <Span Text="At: " />
+                                                <Span Text="{Binding DateTime, StringFormat='{0:MMMM dd, yyyy hh\\:mm}'}"/>
+                                            </FormattedString>
+                                        </Label.FormattedText>
+                                    </Label>
+
+                                    <BoxView Color="#d7e0b6"
+                                    HeightRequest="3"
+                                    HorizontalOptions="Fill"/>
+
+                                    <Label>
+                                        <Label.FormattedText>
+                                            <FormattedString>
+                                                <Span Text="Device: " />
+                                                <Span Text="{Binding DeviceName}"/>
+                                            </FormattedString>
+                                        </Label.FormattedText>
+                                    </Label>
+
+                                    <BoxView Color="#d7e0b6"
+                                    HeightRequest="3"
+                                    HorizontalOptions="Fill"/>
+
+                                    <Label  Margin="0,0,0,80">
+                                        <Label.FormattedText>
+                                            <FormattedString>
+                                                <Span Text="Location: " />
+                                                <Span Text="{Binding Location}"/>
+                                            </FormattedString>
+                                        </Label.FormattedText>
+                                    </Label>
+                                                                
+                                    <Button Style="{StaticResource buttonStyle}"
+                                    Text="{x:Static resource:AppResources.ConfirmButton}"
+                                    Clicked="ConfirmAlarm"
+                                    BackgroundColor="#99CC00">
+                                        <Button.Background>
+                                            <LinearGradientBrush StartPoint="0,0"
+                                            EndPoint="1,0">
+                                            <GradientStop Color="#99CC00"
+                                            Offset="0.1"/>
+                                            <GradientStop Color="#72ab72"
+                                            Offset="1.0"/>
+                                            </LinearGradientBrush>
+                                        </Button.Background>
+                                    </Button>
+                                    
+                                    <Button Style="{StaticResource buttonStyle}"
+                                    Text="{x:Static resource:AppResources.SkipButton}"
+                                    Clicked="SkipAlarm"
+                                    BackgroundColor="Gray"/>
+                                    
+                                </StackLayout>
+                            </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </Frame>
+</ContentPage>

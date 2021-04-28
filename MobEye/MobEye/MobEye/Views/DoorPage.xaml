@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:resource="clr-namespace:MobEye.Resources"
+             x:Class="MobEye.Views.DoorPage">
+
+    <StackLayout>
+        <StackLayout Padding="0,0,0,40">
+            <Label x:Name="Lbl_Remote_Access" 
+               FontSize="50"
+               Text="{x:Static resource:AppResources.RemoteMessage}" 
+               HorizontalTextAlignment="Center"
+               Padding="0,70,0,0"/>
+        </StackLayout>
+
+
+        <Frame BorderColor="#d7e0b6"
+       Padding="20"
+       Margin="60,30,60,30">
+            <StackLayout>
+                <Picker x:Name="Door_Pick"
+                Title="{x:Static resource:AppResources.DoorSelectTitle}"
+                         FontSize="20"
+                        HorizontalTextAlignment="Center">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <!--<x:String>1111</x:String>
+                            <x:String>2222</x:String>
+                            <x:String>3333</x:String>-->
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+
+                <Label x:Name="Lbl_Status" 
+               FontSize="20"
+               HorizontalTextAlignment="Center"/>
+            </StackLayout>
+        </Frame>
+
+        <Button x:Name="Btn_Open_Door" 
+                Style="{StaticResource buttonStyle}"
+                Text="{x:Static resource:AppResources.OpenButton}"
+                Clicked="OpenDoor"
+                Margin="0">
+            <Button.Background>
+                <LinearGradientBrush StartPoint="0,0"
+                             EndPoint="1,0">
+                    <GradientStop Color="#99CC00"
+                          Offset="0.1"/>
+                    <GradientStop Color="#72ab72"
+                          Offset="1.0"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+
+    </StackLayout>
+</ContentPage>

@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:MobEye.Controls;assembly=MobEye"
+             x:Class="MobEye.App">
+    <Application.Resources>
+        <ResourceDictionary>
+            <Style TargetType="NavigationPage">
+                <Setter Property="BarBackgroundColor" Value="#99CC00"/>
+                <Setter Property="BarTextColor" Value="Black"/>
+            </Style>
+
+            <Style x:Key="buttonStyle" TargetType="Button">
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="BorderRadius" Value="30" />
+                <Setter Property="BorderWidth" Value="5" />
+                <Setter Property="WidthRequest" Value="300" />
+                <Setter Property="TextColor" Value="Black" />
+                <Setter Property="FontSize" Value="19"/>
+                <Setter Property="Margin" Value="0,12,0,0"/>
+            </Style>
+
+            <Style x:Key="entryStyle" TargetType="Entry">
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="WidthRequest" Value="250" />
+                <Setter Property="BackgroundColor" Value="White"/>
+                <Setter Property="Opacity" Value="1"/>
+                <Setter Property="FontSize" Value="21"/>
+                <Setter Property="Margin" Value="0,0,0,0"/>
+            </Style>
+
+            <Style TargetType="local:CustomEntry">
+                <Setter Property="Padding" Value="13" />
+                <Setter Property="InnerBackgroundColor" Value="White" />
+                <Setter Property="BorderColor" Value="#d7e0b6"/>
+                <Setter Property="BorderThickness" Value="3"/>
+                <Setter Property="CornerRadius" Value="30"/>
+                <Setter Property="PlaceholderColor" Value="Gray"/>
+                <Setter Property="FontSize" Value="21"/>
+                <Setter Property="ClearButtonVisibility" Value="WhileEditing"/>
+                <Setter Property="IsSpellCheckEnabled" Value="false"/>
+                <Setter Property="IsTextPredictionEnabled" Value="false"/>
+
+                <Setter Property="HorizontalOptions" Value="Center"/>
+                <Setter Property="WidthRequest" Value="300"/>
+                <Setter Property="Opacity" Value="1"/>
+                <Setter Property="Margin" Value="0,0,0,15"/>
+            </Style>
+
+            <OnPlatform x:TypeArguments="x:String" x:Key="BoldFont">
+                <On Platform="Android" Value="SecularOne-Regular.ttf#Secular One" />
+            </OnPlatform>
+            <OnPlatform x:TypeArguments="x:String" x:Key="NormalFont">
+                <On Platform="Android" Value="SecularOne-Regular.ttf#Secular One" />
+            </OnPlatform>
+
+            <Style TargetType="Label">
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="HorizontalTextAlignment" Value="Center"/>
+                <Setter Property="TextColor" Value="Black" />
+                <Setter Property="FontSize" Value="20" />
+                <Setter Property="Margin" Value="0,0,0,0"/>
+            </Style>
+
+            <Style x:Key="alarmLabel" TargetType="Label">
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="WidthRequest" Value="250" />
+                <Setter Property="HorizontalTextAlignment" Value="Center"/>
+                <Setter Property="FontSize" Value="20" />
+                <Setter Property="Margin" Value="0,0,0,15"/>
+            </Style>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
