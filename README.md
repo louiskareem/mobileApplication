@@ -1,7 +1,9 @@
 # Mobeye Mobile Application
-This is an Xamarin cross-platform mobile application 
+This is an Xamarin cross-platform mobile application that was built for a Partner in Education of Fontys Hogescholen
 
 ## What I Learned
-* How to make a REST API back-end system communicate with the mobile application
+* Working in teams with students of different nationalities
+* How to make a mobile application consume a RESTful web service
 * How to build Xamarin applications for iOS & Android
-* Integrate MVVM architecture 
+* Integrate MVVM architecture
+* Store data in application
